@@ -1,4 +1,4 @@
-//Aynı örnek üzerinden if koşulları başka hangi şekilde oluşturulabilirdi farklı çözüm yolları bulunuz.
+//Girilen 3 sayıyı "küçükten büyüğe" sıralayan programı yazınız.
 //https://app.patika.dev/gazellhatice
 
 import java.util.Scanner;
@@ -6,19 +6,33 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
-        double heat;
+        int a, b, c;
 
-        System.out.print("Hava Sıcaklığını Giriniz: ");
-        heat = inp.nextDouble();
+        System.out.print("1. sayiyi giriniz: ");
+        a = inp.nextInt();
+        System.out.print("2. sayiyi giriniz: ");
+        b = inp.nextInt();
+        System.out.print("3. sayiyi giriniz: ");
+        c = inp.nextInt();
 
-        if (heat < 5){
-            System.out.print("Kayak yapmaya gidebilirsiniz.");
-        }else if(heat <= 15){
-            System.out.println("Sinemaya gidebilirisiniz. ");
-        }if((heat >= 10) && (heat <= 25)){
-            System.out.println("Pikniğe gidebilirsiniz.");
-        }else if(heat >= 25){
-            System.out.print("Yüzmeye gidebilirsiniz. ");
+        if ((a < b) && (a < c)) {
+            if (b < c) {
+                System.out.print("a < b < c");
+            } else {
+                System.out.print("a < c < b");
+            }
+        } else if ((b < a) && (b < c)) {
+            if (a < c) {
+                System.out.print("b < a < c");
+            } else {
+                System.out.print("b < c < a");
+            }
+        } else {
+            if (a < b) {
+                System.out.print("c < a < b");
+            } else {
+                System.out.print("c < b < a");
+            }
         }
     }
 }

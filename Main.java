@@ -1,30 +1,24 @@
+//Aynı örnek üzerinden if koşulları başka hangi şekilde oluşturulabilirdi farklı çözüm yolları bulunuz.
+//https://app.patika.dev/gazellhatice
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Course mat = new Course("Matematik","MAT101","MAT");
-        Course fizik = new Course("Fizik","FZK101","FZK");
-        Course kimya = new Course("Kimya","KMY101","KMY");
+        Scanner inp = new Scanner(System.in);
+        double heat;
 
-        Teacher t1 = new Teacher("Mahmut Hoca","6347868798798","MAT");
-        Teacher t2 = new Teacher("Fatma Ayşe","9897879879878","FZK");
-        Teacher t3 = new Teacher("Ali Veli","8789787897877","KMY");
+        System.out.print("Hava Sıcaklığını Giriniz: ");
+        heat = inp.nextDouble();
 
-        mat.addTeacher(t1);
-        fizik.addTeacher(t2);
-        kimya.addTeacher(t3);
-
-        Student s1 = new Student("Hatice",4,"33432442",mat,fizik,kimya);
-        s1.addBulkExamNote(50,30,20);
-        s1.isPass();
-
-        Student s2 = new Student("Derya",4,"33432442",mat,fizik,kimya);
-        s2.addBulkExamNote(100,50,40);
-        s2.isPass();
-
-        Student s3 = new Student("Mehlika",4,"33432442",mat,fizik,kimya);
-        s3.addBulkExamNote(50,30,70);
-        s3.isPass();
+        if (heat < 5){
+            System.out.print("Kayak yapmaya gidebilirsiniz.");
+        }else if(heat <= 15){
+            System.out.println("Sinemaya gidebilirisiniz. ");
+        }if((heat >= 10) && (heat <= 25)){
+            System.out.println("Pikniğe gidebilirsiniz.");
+        }else if(heat >= 25){
+            System.out.print("Yüzmeye gidebilirsiniz. ");
+        }
     }
 }
